@@ -1,3 +1,4 @@
+
 // constants won't change. Used here to set a pin number :
 const int starttime = 100;    // the amount of time that each delay is going to have on the startup script.
 long randNumber;
@@ -8,7 +9,7 @@ int ledState1 = LOW;             // ledState used to set the LED
 int ledState2 = LOW;             // ledState used to set the LED
 int ledState3 = LOW;             // ledState used to set the LED
 int ledState4 = LOW;             // ledState used to set the LED
-int ledState5 = LOW;             // ledState used to set the LED
+int ledState5 = LOW;              // ledState used to set the LED
 int ledState6 = LOW;             // ledState used to set the LED
 int ledState7 = LOW;             // ledState used to set the LED
 int ledState8 = LOW;             // ledState used to set the LED
@@ -19,20 +20,20 @@ int ledState12 = LOW;             // ledState used to set the LED
 int ledState13 = LOW;             // ledState used to set the LED
 
 //Set what pins are enabled. (Low = Off, High = On)
-int ledEnabled0 = LOW;
-int ledEnabled1 = LOW;
-int ledEnabled2 = LOW;
-int ledEnabled3 = LOW;
-int ledEnabled4 = LOW;
-int ledEnabled5 = LOW;
-int ledEnabled6 = LOW;
-int ledEnabled7 = LOW;
-int ledEnabled8 = LOW;
-int ledEnabled9 = LOW;
-int ledEnabled10 = LOW;
-int ledEnabled11 = LOW;
-int ledEnabled12 = LOW;
-int ledEnabled13 = LOW;
+int ledEnabled0 = HIGH;
+int ledEnabled1 = HIGH;
+int ledEnabled2 = HIGH;
+int ledEnabled3 = HIGH;
+int ledEnabled4 = HIGH;
+int ledEnabled5 = HIGH;
+int ledEnabled6 = HIGH;
+int ledEnabled7 = HIGH;
+int ledEnabled8 = HIGH;
+int ledEnabled9 = HIGH;
+int ledEnabled10 = HIGH;
+int ledEnabled11 = HIGH;
+int ledEnabled12 = HIGH;
+int ledEnabled13 = HIGH;
 
 
 // Generally, you should use "unsigned long" for variables that hold time
@@ -89,7 +90,7 @@ else if ((NumberCounter == 100) || (NumberCounter == 300) || (NumberCounter == 5
     LightsOff();
     Blink(5, 1000);
   }
-NumberCounter++; //Add one to the number counter.
+
   
   // check to see if it's time to blink the LED; that is, if the
   // difference between the current time and last time you blinked
@@ -100,7 +101,7 @@ NumberCounter++; //Add one to the number counter.
   if (currentMillis - previousMillis >= interval) {
     // save the last time you blinked the LED
     previousMillis = currentMillis;
-
+NumberCounter++; //Add one to the number counter.
     // set the LED with the ledState of the variable:
      RandomLight();
   }
@@ -115,7 +116,7 @@ void RandomLight()
       ledState0 = LOW;
     }
     digitalWrite(0, ledState0);
-    return 1;
+    
     }
 
     if ((randNumber == 1) && (ledEnabled1 == HIGH)){
@@ -125,7 +126,7 @@ void RandomLight()
       ledState1 = LOW;
     }
         digitalWrite(1, ledState1);
-        return 1;
+        
     }
 
 
@@ -136,7 +137,7 @@ void RandomLight()
       ledState2 = LOW;
     }
     digitalWrite(2, ledState2);
-    return 1;
+    
     }
 
     if ((randNumber == 3) && (ledEnabled3 == HIGH)){
@@ -146,7 +147,7 @@ void RandomLight()
       ledState3 = LOW;
     }
     digitalWrite(3, ledState3);
-    return 1;
+    
     }
 
     if ((randNumber == 4) && (ledEnabled4 == HIGH)){
@@ -156,7 +157,7 @@ void RandomLight()
       ledState4 = LOW;
     }
     digitalWrite(4, ledState4);
-    return 1;
+    
     }
 
 
@@ -167,7 +168,7 @@ void RandomLight()
       ledState5 = LOW;
     }
     digitalWrite(5, ledState5);
-    return 1;
+    
     }
 
 
@@ -178,7 +179,7 @@ void RandomLight()
       ledState6 = LOW;
     }
     digitalWrite(6, ledState6);
-    return 1;
+    
     }
 
 
@@ -189,7 +190,7 @@ void RandomLight()
       ledState7 = LOW;
     }
     digitalWrite(7, ledState7);
-    return 1;
+    
     }
 
 
@@ -200,7 +201,7 @@ void RandomLight()
       ledState8 = LOW;
     }
     digitalWrite(8, ledState8);
-    return 1;
+    
     }
 
     if ((randNumber == 9) && (ledEnabled9 == HIGH)){
@@ -210,7 +211,7 @@ void RandomLight()
       ledState9 = LOW;
     }
     digitalWrite(9, ledState9);
-    return 1;
+    
     }
 
     if ((randNumber == 10) && (ledEnabled10 == HIGH)){
@@ -220,7 +221,7 @@ void RandomLight()
       ledState10 = LOW;
     }
     digitalWrite(10, ledState10);
-    return 1;
+    
     }
 
 
@@ -231,7 +232,7 @@ void RandomLight()
       ledState11 = LOW;
     }
     digitalWrite(11, ledState11);
-    return 1;
+    
     }
 
 
@@ -242,7 +243,7 @@ void RandomLight()
       ledState12 = LOW;
     }
     digitalWrite(12, ledState12);
-    return 1;
+    
     }
 
 
@@ -253,7 +254,7 @@ void RandomLight()
       ledState13 = LOW;
     }
     digitalWrite(13, ledState13);
-    return 1;
+    
     }
 }
 
@@ -419,4 +420,3 @@ void Chase(int delays, int type) //Delays = How much of a delay between each pin
         delay (delays); 
     }
 }
-
