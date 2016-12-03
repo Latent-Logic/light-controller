@@ -20,20 +20,20 @@ int ledState12 = LOW;             // ledState used to set the LED
 int ledState13 = LOW;             // ledState used to set the LED
 
 //Set what pins are enabled. (Low = Off, High = On)
-int ledEnabled0 = HIGH;
-int ledEnabled1 = HIGH;
-int ledEnabled2 = HIGH;
-int ledEnabled3 = HIGH;
-int ledEnabled4 = HIGH;
-int ledEnabled5 = HIGH;
-int ledEnabled6 = HIGH;
-int ledEnabled7 = HIGH;
+int ledEnabled0 = LOW;
+int ledEnabled1 = LOW;
+int ledEnabled2 = LOW;
+int ledEnabled3 = LOW;
+int ledEnabled4 = LOW;
+int ledEnabled5 = LOW;
+int ledEnabled6 = LOW;
+int ledEnabled7 = LOW;
 int ledEnabled8 = HIGH;
 int ledEnabled9 = HIGH;
 int ledEnabled10 = HIGH;
-int ledEnabled11 = HIGH;
-int ledEnabled12 = HIGH;
-int ledEnabled13 = HIGH;
+int ledEnabled11 = LOW;
+int ledEnabled12 = LOW;
+int ledEnabled13 = LOW;
 
 
 // Generally, you should use "unsigned long" for variables that hold time
