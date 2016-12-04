@@ -1,6 +1,7 @@
 
 // constants won't change. Used here to set a pin number :
 const int starttime = 100;    // the amount of time that each delay is going to have on the startup script.
+long randstatus;
 long randNumber;
 long NumberCounter; //This is a counter to count how may times the program has looped before it triggers a function.
 // Variables will change :
@@ -72,12 +73,12 @@ Blink(10,starttime); //Blink 10 times.
 }
 
 void loop() {
-randNumber = random(0,14); //Random number to generate what pin should be on/off. Add 1 to your final number. Eg. 13 pins would be a total of 14.
+randstatus = 0; //Always set the status to 0.
 
 //Used for timed events.
 if (NumberCounter > 1000) //Resets the number counter if it is larger then 1000.
 {
-  NumberCounter == 0;
+  NumberCounter = 0;
 }
 else if ((NumberCounter == 100) || (NumberCounter == 300) || (NumberCounter == 500) || (NumberCounter == 700) || (NumberCounter == 900))
 {
@@ -109,7 +110,12 @@ NumberCounter++; //Add one to the number counter.
 
 void RandomLight()
 {
+  do
+  {
+  randNumber = random(0,14); //Random number to generate what pin should be on/off. Add 1 to your final number. Eg. 13 pins would be a total of 14.
+  
     if ((randNumber == 0) && (ledEnabled0 == HIGH)){
+      randstatus = 1;
     if (ledState0 == LOW) {
       ledState0 = HIGH;
     } else {
@@ -120,6 +126,7 @@ void RandomLight()
     }
 
     if ((randNumber == 1) && (ledEnabled1 == HIGH)){
+      randstatus = 1;
     if (ledState1 == LOW) {
       ledState1 = HIGH;
     } else {
@@ -131,6 +138,7 @@ void RandomLight()
 
 
     if ((randNumber == 2) && (ledEnabled2 == HIGH)){
+      randstatus = 1;
     if (ledState2 == LOW) {
       ledState2 = HIGH;
     } else {
@@ -141,6 +149,7 @@ void RandomLight()
     }
 
     if ((randNumber == 3) && (ledEnabled3 == HIGH)){
+      randstatus = 1;
     if (ledState3 == LOW) {
       ledState3 = HIGH;
     } else {
@@ -151,6 +160,7 @@ void RandomLight()
     }
 
     if ((randNumber == 4) && (ledEnabled4 == HIGH)){
+      randstatus = 1;
     if (ledState4 == LOW) {
       ledState4 = HIGH;
     } else {
@@ -162,6 +172,7 @@ void RandomLight()
 
 
     if ((randNumber == 5) && (ledEnabled5 == HIGH)){
+      randstatus = 1;
     if (ledState5 == LOW) {
       ledState5 = HIGH;
     } else {
@@ -173,6 +184,7 @@ void RandomLight()
 
 
     if ((randNumber == 6) && (ledEnabled6 == HIGH)){
+      randstatus = 1;
     if (ledState6 == LOW) {
       ledState6 = HIGH;
     } else {
@@ -184,6 +196,7 @@ void RandomLight()
 
 
     if ((randNumber == 7) && (ledEnabled7 == HIGH)){
+      randstatus = 1;
     if (ledState7 == LOW) {
       ledState7 = HIGH;
     } else {
@@ -195,6 +208,7 @@ void RandomLight()
 
 
     if ((randNumber == 8) && (ledEnabled8 == HIGH)){
+      randstatus = 1;
     if (ledState8 == LOW) {
       ledState8 = HIGH;
     } else {
@@ -205,6 +219,7 @@ void RandomLight()
     }
 
     if ((randNumber == 9) && (ledEnabled9 == HIGH)){
+      randstatus = 1;
     if (ledState9 == LOW) {
       ledState9 = HIGH;
     } else {
@@ -215,6 +230,7 @@ void RandomLight()
     }
 
     if ((randNumber == 10) && (ledEnabled10 == HIGH)){
+      randstatus = 1;
     if (ledState10 == LOW) {
       ledState10 = HIGH;
     } else {
@@ -226,6 +242,7 @@ void RandomLight()
 
 
     if ((randNumber == 11) && (ledEnabled11 == HIGH)){
+      randstatus = 1;
     if (ledState11 == LOW) {
       ledState11 = HIGH;
     } else {
@@ -237,6 +254,7 @@ void RandomLight()
 
 
     if ((randNumber == 12) && (ledEnabled12 == HIGH)){
+      randstatus = 1;
     if (ledState12 == LOW) {
       ledState12 = HIGH;
     } else {
@@ -248,6 +266,7 @@ void RandomLight()
 
 
     if ((randNumber == 13) && (ledEnabled13 == HIGH)){
+      randstatus = 1;
     if (ledState13 == LOW) {
       ledState13 = HIGH;
     } else {
@@ -256,6 +275,8 @@ void RandomLight()
     digitalWrite(13, ledState13);
     
     }
+  }
+  while (randstatus == 0); //Keep looping until we have a random number that will turn an output on or off.
 }
 
 void LightsOn() //Turns all pins on.
@@ -420,3 +441,4 @@ void Chase(int delays, int type) //Delays = How much of a delay between each pin
         delay (delays); 
     }
 }
+
